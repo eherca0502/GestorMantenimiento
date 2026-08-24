@@ -1,226 +1,291 @@
 # 🛠️ GestorMantenimiento
 
-Sistema de gestión y control de equipos informáticos y mantenimientos, desarrollado como una aplicación de escritorio utilizando **C# Windows Forms** y **SQL Server**.
+Sistema de escritorio para la **gestión y control de equipos de cómputo, mantenimientos, garantías y tickets de soporte técnico**.
 
-El sistema permite llevar un control centralizado de los equipos, usuarios, mantenimientos realizados, garantías y reportes, facilitando la administración y seguimiento del inventario tecnológico.
+El proyecto fue desarrollado como una aplicación de escritorio utilizando **C# y Windows Forms**, con **SQL Server** como sistema gestor de base de datos.
 
-## 📋 Características
+---
 
-* 🔐 **Inicio de sesión**
+## 📋 Descripción
 
-  * Autenticación mediante usuario y contraseña.
-  * Control de usuarios activos.
-  * Identificación del rol del usuario.
+**GestorMantenimiento** es una aplicación diseñada para facilitar la administración de los equipos tecnológicos de una organización y llevar un control centralizado de sus mantenimientos.
 
-* 💻 **Gestión de equipos**
+El sistema permite registrar y consultar información de los equipos, administrar usuarios, controlar mantenimientos y dar seguimiento a garantías y tickets de soporte.
 
-  * Registro de equipos.
-  * Consulta y búsqueda de equipos.
-  * Información de marca, modelo, número de serie y características.
-  * Usuario y área asignada.
-  * Estado del equipo.
-  * Fechas de adquisición y garantía.
-  * Observaciones.
+Su objetivo es mantener organizada la información del área de sistemas y facilitar el seguimiento de las actividades de mantenimiento.
 
-* 🔧 **Gestión de mantenimientos**
+---
 
-  * Registro de mantenimientos.
-  * Asociación del mantenimiento con un equipo.
-  * Tipo de mantenimiento.
-  * Registro de problema, diagnóstico y solución.
-  * Control de costos.
-  * Fecha y observaciones.
-  * Consulta del historial de mantenimientos.
+## ✨ Características
 
-* 🛡️ **Control de garantías**
+* 🔐 Inicio de sesión de usuarios.
+* 👥 Gestión de usuarios y roles.
+* 💻 Registro y administración de equipos.
+* 🔧 Gestión de mantenimientos.
+* 🛡️ Control y seguimiento de garantías.
+* 🎫 Administración de tickets.
+* 📊 Panel principal con indicadores.
+* 🔎 Consulta de información mediante tablas.
+* ✏️ Registro, edición y eliminación de información.
+* 📅 Registro de fechas de adquisición, garantía y mantenimiento.
+* 🗄️ Integración con SQL Server.
+* 🔒 Control de acceso mediante usuarios y roles.
 
-  * Consulta de garantías de los equipos.
-  * Identificación de garantías vigentes.
-  * Detección de garantías próximas a vencer.
-  * Identificación de garantías vencidas.
-  * Visualización de días restantes.
+---
 
-* 👥 **Gestión de usuarios**
+## 📦 Módulos del sistema
 
-  * Registro y administración de usuarios.
-  * Roles de usuario.
-  * Activación y desactivación de cuentas.
-  * Búsqueda de usuarios.
+### 🔐 Usuarios
 
-* 📊 **Reportes**
+Permite administrar los usuarios que tienen acceso al sistema.
 
-  * Reportes de equipos.
-  * Reportes de mantenimientos.
-  * Reportes de garantías.
-  * Resumen de equipos registrados.
-  * Total de mantenimientos.
-  * Garantías vigentes.
-  * Costo total de mantenimientos.
+Información principal:
 
-* 📈 **Dashboard**
+* ID
+* Nombre de usuario
+* Contraseña
+* Rol
+* Estado activo/inactivo
 
-  * Resumen general de la información.
-  * Visualización de actividad reciente.
-  * Indicadores principales del sistema.
+---
 
-## 🧰 Tecnologías utilizadas
+### 💻 Equipos
 
-| Tecnología             | Uso                      |
-| ---------------------- | ------------------------ |
-| **C#**                 | Lenguaje principal       |
-| **Windows Forms**      | Interfaz gráfica         |
-| **.NET Framework 4.8** | Plataforma de desarrollo |
-| **SQL Server**         | Base de datos            |
-| **ADO.NET**            | Acceso a datos           |
-| **Visual Studio**      | Entorno de desarrollo    |
+Permite registrar y administrar el inventario de equipos tecnológicos.
 
-## 🏗️ Arquitectura
+Datos registrados:
 
-El proyecto utiliza una estructura organizada separando la interfaz, modelos y acceso a datos:
+* Código
+* Tipo de equipo
+* Marca
+* Modelo
+* Número de serie
+* Usuario asignado
+* Área
+* Sistema operativo
+* RAM
+* Almacenamiento
+* Dirección IP
+* Fecha de adquisición
+* Fecha de garantía
+* Estado
+* Observaciones
+* Fecha de registro
 
-```text
-GestorMantenimiento/
-│
-├── Data/
-│   ├── EquipoDAO.cs
-│   ├── MantenimientosDAO.cs
-│   ├── ReportesDAO.cs
-│   └── UsuariosDAO.cs
-│
-├── Models/
-│   ├── Equipo.cs
-│   └── Usuario.cs
-│
-├── EquipoForm.cs
-├── EquiposForm.cs
-├── GarantiasForm.cs
-├── LoginForm.cs
-├── MainForm.cs
-├── MantenimientosForm.cs
-├── ReportesForm.cs
-├── UsuariosForm.cs
-│
-├── Conexion.cs
-├── Program.cs
-├── App.config
-└── GestorMantenimiento.csproj
-```
+---
+
+### 🔧 Mantenimientos
+
+Permite llevar un historial de los mantenimientos realizados a los equipos.
+
+El módulo permite registrar y consultar información relacionada con las actividades de mantenimiento y su seguimiento.
+
+---
+
+### 🛡️ Garantías
+
+Permite consultar y dar seguimiento a las garantías asociadas con los equipos registrados.
+
+---
+
+### 🎫 Tickets
+
+Permite registrar solicitudes o incidencias relacionadas con soporte técnico y dar seguimiento a su atención.
+
+---
+
+### 📊 Dashboard
+
+El sistema cuenta con un panel principal que permite visualizar información general mediante indicadores, como:
+
+* Total de equipos
+* Mantenimientos
+* Garantías
+* Tickets
+* Actividad reciente
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+| Tecnología             | Uso                       |
+| ---------------------- | ------------------------- |
+| **C#**                 | Lenguaje principal        |
+| **Windows Forms**      | Interfaz gráfica          |
+| **.NET Framework 4.8** | Plataforma de desarrollo  |
+| **SQL Server**         | Base de datos             |
+| **ADO.NET**            | Conexión y acceso a datos |
+| **Visual Studio**      | Entorno de desarrollo     |
+| **Git / GitHub**       | Control de versiones      |
+
+---
 
 ## 🗄️ Base de datos
 
-El sistema utiliza **SQL Server** para almacenar la información relacionada con:
+El proyecto utiliza **Microsoft SQL Server** para almacenar la información del sistema.
 
-* Usuarios
-* Equipos
-* Mantenimientos
-* Garantías
-* Información necesaria para los reportes
+La base de datos contiene las estructuras necesarias para trabajar con los diferentes módulos de la aplicación.
 
-La conexión con la base de datos se gestiona mediante la clase:
+Entre las principales entidades se encuentran:
 
-```text
-Conexion.cs
-```
+* `usuarios`
+* `equipos`
+* `mantenimientos`
+* `garantias`
+* `tickets`
 
-> ⚠️ La cadena de conexión debe configurarse de acuerdo con la instancia de SQL Server utilizada en cada equipo.
+La estructura de la base de datos se encuentra incluida dentro del proyecto para facilitar su configuración.
 
-## 🚀 Instalación
+> **Importante:** antes de ejecutar la aplicación, es necesario configurar correctamente la cadena de conexión de SQL Server de acuerdo con el servidor y la instancia utilizados.
+
+---
+
+## ⚙️ Instalación
 
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/GestorMantenimiento.git
+git clone https://github.com/eherca0502/GestorMantenimiento.git
 ```
 
 ### 2. Abrir el proyecto
 
-Abrir:
+Abrir el archivo:
 
 ```text
 GestorMantenimiento.slnx
 ```
 
-o el archivo de solución compatible con la versión de Visual Studio utilizada.
-
-### 3. Configurar SQL Server
-
-Crear la base de datos necesaria en SQL Server y configurar la conexión utilizada por el proyecto.
-
-### 4. Compilar
-
-Desde Visual Studio:
-
-```text
-Build → Build Solution
-```
-
-o utilizar:
-
-```text
-Ctrl + Shift + B
-```
-
-### 5. Ejecutar
-
-Iniciar el proyecto desde Visual Studio con:
-
-```text
-F5
-```
-
-## 🔑 Acceso
-
-El sistema requiere un usuario registrado y activo en la base de datos para poder iniciar sesión.
-
-Los usuarios y sus roles son administrados desde el módulo correspondiente.
-
-> Por seguridad, no se incluyen credenciales reales dentro del repositorio.
-
-## 📊 Módulos principales
-
-### Dashboard
-
-Presenta un resumen de la información del sistema y actividad reciente para facilitar la supervisión general.
-
-### Equipos
-
-Permite administrar el inventario de equipos informáticos y consultar sus principales características.
-
-### Mantenimientos
-
-Permite registrar y consultar el historial de reparaciones y mantenimientos realizados a cada equipo.
-
-### Garantías
-
-Facilita el seguimiento de las fechas de garantía y permite identificar equipos con garantías próximas a vencer.
-
-### Usuarios
-
-Permite administrar las cuentas utilizadas para acceder al sistema.
-
-### Reportes
-
-Centraliza información de equipos, mantenimientos y garantías para facilitar la consulta y análisis de la información.
-
-## 🔒 Consideraciones de seguridad
-
-Para utilizar el proyecto en un entorno real se recomienda:
-
-* No subir contraseñas reales al repositorio.
-* No publicar cadenas de conexión con credenciales.
-* Utilizar usuarios de SQL Server con permisos mínimos necesarios.
-* Implementar hash de contraseñas en lugar de almacenar contraseñas en texto plano.
-* Configurar las credenciales mediante variables de entorno o archivos de configuración fuera del repositorio.
-
-## 📌 Estado del proyecto
-
-**Estado:** En desarrollo / funcional.
-
-El proyecto puede seguir ampliándose con nuevas funcionalidades, mejoras de seguridad, exportación de reportes y nuevas herramientas de administración.
-
-
-
+utilizando **Visual Studio**.
 
 ---
 
-⭐ Si este proyecto te resulta útil, considera darle una estrella al repositorio.
+### 3. Configurar SQL Server
+
+Asegúrate de tener instalado:
+
+* Microsoft SQL Server
+* SQL Server Management Studio (SSMS)
+
+Crear o restaurar la base de datos incluida en el proyecto.
+
+Después, configurar la cadena de conexión utilizada por la aplicación.
+
+Ejemplo:
+
+```csharp
+Server=SERVIDOR;
+Database=GestorMantenimiento;
+Integrated Security=True;
+TrustServerCertificate=True;
+```
+
+Si utilizas una instancia específica de SQL Server:
+
+```csharp
+Server=SERVIDOR\INSTANCIA;
+Database=GestorMantenimiento;
+Integrated Security=True;
+TrustServerCertificate=True;
+```
+
+> La cadena de conexión debe adaptarse al servidor SQL Server de cada equipo.
+
+---
+
+### 4. Restaurar dependencias
+
+Desde Visual Studio:
+
+**Build → Rebuild Solution**
+
+o ejecutar:
+
+```bash
+dotnet restore
+```
+
+si corresponde a la configuración del proyecto.
+
+---
+
+### 5. Ejecutar
+
+Una vez configurada la base de datos y la conexión:
+
+1. Abrir la solución en Visual Studio.
+2. Establecer el proyecto como proyecto de inicio.
+3. Compilar la solución.
+4. Ejecutar la aplicación.
+
+---
+
+## 🔑 Acceso al sistema
+
+El acceso se realiza mediante el módulo de inicio de sesión.
+
+Los usuarios son administrados desde la tabla:
+
+```text
+usuarios
+```
+
+El sistema contempla diferentes roles para controlar el acceso a las funcionalidades disponibles.
+
+---
+
+## 📁 Estructura del proyecto
+
+```text
+GestorMantenimiento/
+│
+├── GestorMantenimiento/
+│   ├── DAO/
+│   ├── Forms/
+│   ├── Models/
+│   ├── Conexion.cs
+│   ├── LoginForm.cs
+│   ├── MainForm.cs
+│   └── ...
+│
+├── .gitignore
+├── .gitattributes
+├── GestorMantenimiento.slnx
+└── README.md
+```
+
+> La estructura puede variar conforme el proyecto continúe evolucionando.
+
+---
+
+## 🎯 Objetivo del proyecto
+
+El objetivo principal de **GestorMantenimiento** es proporcionar una herramienta sencilla y organizada para administrar los recursos tecnológicos de una organización.
+
+El sistema busca centralizar la información relacionada con:
+
+**Equipos → Usuarios → Mantenimientos → Garantías → Tickets**
+
+permitiendo mejorar el control del inventario y el seguimiento del soporte técnico.
+
+---
+
+## 🚀 Próximas mejoras
+
+Algunas funcionalidades que pueden incorporarse posteriormente:
+
+* 📈 Reportes y estadísticas avanzadas.
+* 📄 Exportación de información a Excel o PDF.
+* 🔔 Notificaciones de garantías próximas a vencer.
+* ⏰ Alertas de mantenimientos preventivos.
+* 📊 Gráficas en el dashboard.
+* 🔐 Mejoras adicionales de seguridad.
+* 👤 Administración avanzada de permisos por rol.
+* 📝 Historial detallado de cambios.
+* 💾 Sistema de respaldos de la base de datos.
+
+---
+
+
+
+Si este proyecto te resulta útil, puedes darle ⭐ al repositorio.
